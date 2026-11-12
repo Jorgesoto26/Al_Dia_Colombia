@@ -199,6 +199,8 @@ export const notificationsService = {
                 android: {
                   channelId: NOTIFICATION_CHANNEL_ID,
                   importance: AndroidImportance.HIGH,
+                  smallIcon: 'ic_notification',
+                  largeIcon: 'ic_launcher',
                   color: '#3B82F6',
                   pressAction: {
                     id: 'default',
@@ -234,6 +236,8 @@ export const notificationsService = {
                 android: {
                   channelId: NOTIFICATION_CHANNEL_ID,
                   importance: AndroidImportance.HIGH,
+                  smallIcon: 'ic_notification',
+                  largeIcon: 'ic_launcher',
                   color: '#EF4444',
                   pressAction: {
                     id: 'default',
@@ -282,6 +286,8 @@ export const notificationsService = {
       android: {
         channelId: NOTIFICATION_CHANNEL_ID,
         importance: AndroidImportance.HIGH,
+        smallIcon: 'ic_notification',
+        largeIcon: 'ic_launcher',
         color: '#3B82F6',
         pressAction: {
           id: 'default',

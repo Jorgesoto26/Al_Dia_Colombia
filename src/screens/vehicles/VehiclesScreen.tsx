@@ -48,7 +48,6 @@ export const VehiclesScreen: React.FC = () => {
     deleteVehicle,
     setFavorite,
     syncCloudVehicles,
-    sendTestNotification,
   } = useVehicles();
   const { isDark, colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -300,14 +299,6 @@ export const VehiclesScreen: React.FC = () => {
     );
   };
 
-  const handleTestAlert = async () => {
-    try {
-      await sendTestNotification();
-    } catch {
-      Alert.alert('Aviso', 'Asegúrate de conceder permisos de notificación a la app.');
-    }
-  };
-
   const getVehicleIcon = (type: string, color = COLORS.textPrimary) => {
     switch (type) {
       case 'moto':
@@ -386,16 +377,6 @@ export const VehiclesScreen: React.FC = () => {
               </Text>
             </View>
           </View>
-
-          <TouchableOpacity
-            style={[styles.testNotificationBtn, { borderColor: isDark ? 'rgba(59, 130, 246, 0.35)' : 'rgba(59, 130, 246, 0.25)' }]}
-            onPress={handleTestAlert}
-            activeOpacity={0.8}
-          >
-            <Text style={[styles.testNotificationBtnText, { color: colors.primary }]}>
-              🔔 Probar Notificación Ahora
-            </Text>
-          </TouchableOpacity>
         </GlassCard>
 
         {/* ================================================================ */}
@@ -1164,21 +1145,6 @@ const styles = StyleSheet.create({
     color: COLORS.textSecondary,
     marginTop: 2,
     lineHeight: 16,
-  },
-  testNotificationBtn: {
-    marginTop: 10,
-    paddingVertical: 7,
-    paddingHorizontal: 12,
-    borderRadius: 8,
-    borderWidth: 1,
-    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'flex-start',
-  },
-  testNotificationBtnText: {
-    fontSize: 11.5,
-    fontWeight: '700',
   },
   sectionHeader: {
     marginBottom: 12,
